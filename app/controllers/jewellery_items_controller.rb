@@ -1,5 +1,6 @@
 class JewelleryItemsController < ApplicationController
   def index
+    @jewellery_items = JewelleryItem.all
   end
 
   def show

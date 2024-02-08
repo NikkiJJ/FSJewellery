@@ -1,2 +1,12 @@
 <h1>JewelleryItems#index</h1>
 <p>Find me in app/views/jewellery_items/index.html.erb</p>
+<h1>Jewellery Items</h1>
+
+<% @jewellery_items.each do |item| %>
+  <div>
+    <h2><%= item.name %></h2>
+    <p><%= item.description %></p>
+    <p>Price: <%= item.price %></p>
+    <!-- Add more details as needed -->
+  </div>
+<% end %>
