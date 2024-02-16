@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="card card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-        Collections
+        <%= link_to "Collections", collections_path, class: "card-button" %>
       </div>
     </div>
     <div class="col-md-6">
@@ -18,12 +18,12 @@
     </div>
     <div class="col-md-6">
       <div class="card card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1597674555896-40628c334f18?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-        Contact Me
+        <%= link_to "Contact Me", contact_path, class: "card-button" %>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-        <%= link_to "About me", about_path, class: "btn btn-primary" %>
+        <%= link_to "About me", about_path, class: "card-button" %>
       </div>
     </div>
   </div>
