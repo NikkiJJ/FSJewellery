@@ -1,0 +1,11 @@
+<h1>Hellow from the actual necklaces index page</h1>
+
+<h1>Necklaces</h1>
+
+<% @necklaces.each do |necklace| %>
+  <div>
+    <h3><%= necklace.name %></h3>
+    <p><%= necklace.description %></p>
+    <p><%= number_to_currency(necklace.price) %></p>
+  </div>
+<% end %>

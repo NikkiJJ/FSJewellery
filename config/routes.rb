@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :jewellery_items
+  resources :necklaces
 
   root to: "pages#home"
 
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   get "collections", to: "pages#collections", as: :collections
   get "rings", to: "pages#rings", as: :rings
   get "braceletes", to: "pages#braceletes", as: :braceletes
-  get "necklaces", to: "pages#necklaces", as: :necklaces
   get "broochescufflinks", to: "pages#broochescufflinks", as: :broochescufflinks
 
 end
