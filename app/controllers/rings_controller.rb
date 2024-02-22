@@ -1,5 +1,6 @@
 class RingsController < ApplicationController
   def index
+    @rings = JewelleryItem.where(item_type: 'Ring')
   end
 
   def show

@@ -1,2 +1,9 @@
-<h1>Brooches#index</h1>
-<p>Find me in app/views/brooches/index.html.erb</p>
+<h1>Brooches</h1>
+
+<% @brooches.each do |brooch| %>
+  <div>
+    <h3><%= brooch.name %></h3>
+    <p><%= brooch.description %></p>
+    <p><%= number_to_currency(brooch.price) %></p>
+  </div>
+<% end %>

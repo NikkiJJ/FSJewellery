@@ -1,2 +1,9 @@
-<h1>Earrings#index</h1>
-<p>Find me in app/views/earrings/index.html.erb</p>
+<h1>Earrings</h1>
+
+<% @earrings.each do |earring| %>
+  <div>
+    <h3><%= earring.name %></h3>
+    <p><%= earring.description %></p>
+    <p><%= number_to_currency(earring.price) %></p>
+  </div>
+<% end %>

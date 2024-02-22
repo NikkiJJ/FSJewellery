@@ -1,2 +1,9 @@
-<h1>Rings#index</h1>
-<p>Find me in app/views/rings/index.html.erb</p>
+<h1>Rings</h1>
+
+<% @rings.each do |ring| %>
+  <div>
+    <h3><%= ring.name %></h3>
+    <p><%= ring.description %></p>
+    <p><%= number_to_currency(ring.price) %></p>
+  </div>
+<% end %>

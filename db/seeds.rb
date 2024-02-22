@@ -28,11 +28,35 @@ JewelleryItem.create(
 )
 
 JewelleryItem.create(
+  name: 'Beach Bracelet',
+  description: 'Hand crafted silver bracelet',
+  price: 70.00,
+  user_id: admin.id,
+  item_type: 'Bracelet'
+)
+
+JewelleryItem.create(
   name: 'Pearl Earrings',
   description: 'Pearls sourced from French Polynesia',
   price: 150.00,
   user_id: admin.id,
   item_type: 'Earrings'
+)
+
+JewelleryItem.create(
+  name: 'Jade Cufflinks',
+  description: 'Jade seaglass cufflinks',
+  price: 150.00,
+  user_id: admin.id,
+  item_type: 'Cufflinks'
+)
+
+JewelleryItem.create(
+  name: 'Driftwood Brooch',
+  description: 'From the beaches of Greece',
+  price: 150.00,
+  user_id: admin.id,
+  item_type: 'Brooch'
 )
 
 puts 'Jewellery items created'
