@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "about",   to: "pages#about",   as: :about
   get "contact", to: "pages#contact", as: :contact
   get "collections", to: "pages#collections", as: :collections
-  get "braceletes", to: "pages#braceletes", as: :braceletes
-  get "broochescufflinks", to: "pages#broochescufflinks", as: :broochescufflinks
+  # get "braceletes", to: "pages#braceletes", as: :braceletes
+  # get "broochescufflinks", to: "pages#broochescufflinks", as: :broochescufflinks
 
 end

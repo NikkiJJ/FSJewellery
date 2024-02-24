@@ -1,6 +1,6 @@
 class CufflinksController < ApplicationController
   def index
-    @cufflink = JewelleryItem.where(item_type: 'Cufflinks')
+    @cufflinks = JewelleryItem.where(item_type: 'Cufflinks')
   end
 
   def show
