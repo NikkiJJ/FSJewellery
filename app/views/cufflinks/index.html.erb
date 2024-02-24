@@ -2,6 +2,7 @@
 
 <% @cufflinks.each do |cufflink| %>
   <div>
+     <%= image_tag cufflink.image if cufflink.image.attached? %>
     <h3><%= cufflink.name %></h3>
     <p><%= cufflink.description %></p>
     <p><%= number_to_currency(cufflink.price) %></p>

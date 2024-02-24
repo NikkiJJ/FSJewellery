@@ -2,6 +2,7 @@
 
 <% @rings.each do |ring| %>
   <div>
+     <%= image_tag ring.image if ring.image.attached? %>
     <h3><%= ring.name %></h3>
     <p><%= ring.description %></p>
     <p><%= number_to_currency(ring.price) %></p>

@@ -2,6 +2,7 @@
 
 <% @bracelets.each do |bracelet| %>
   <div>
+     <%= image_tag bracelet.image if bracelet.image.attached? %>
     <h3><%= bracelet.name %></h3>
     <p><%= bracelet.description %></p>
     <p><%= number_to_currency(bracelet.price) %></p>

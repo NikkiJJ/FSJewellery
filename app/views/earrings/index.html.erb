@@ -2,6 +2,7 @@
 
 <% @earrings.each do |earring| %>
   <div>
+     <%= image_tag earring.image if earring.image.attached? %>
     <h3><%= earring.name %></h3>
     <p><%= earring.description %></p>
     <p><%= number_to_currency(earring.price) %></p>
