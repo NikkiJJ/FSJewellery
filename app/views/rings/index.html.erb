@@ -1,7 +1,7 @@
 <h1>Rings</h1>
 
 <% @rings.each do |ring| %>
-  <div>
+  <div class="jewellery-card">
      <%= image_tag ring.image if ring.image.attached? %>
     <h3><%= ring.name %></h3>
     <p><%= ring.description %></p>
