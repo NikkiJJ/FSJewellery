@@ -1,10 +1,12 @@
-<h1>Rings</h1>
-
-<% @rings.each do |ring| %>
-  <div class="jewellery-card">
-     <%= image_tag ring.image if ring.image.attached? %>
-    <h3><%= ring.name %></h3>
-    <p><%= ring.description %></p>
-    <p><%= number_to_currency(ring.price) %></p>
-  </div>
-<% end %>
+<h1 class="jewellery-item-heading">Rings</h1>
+<div class="card-container">
+  <% @rings.each do |ring| %>
+    <div class="jewellery-card">
+      <%= image_tag ring.image if ring.image.attached? %>
+      <div class="jewellery-card-content">
+          <h4><%= ring.name %></h4>
+          <p><%= number_to_currency(ring.price) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
