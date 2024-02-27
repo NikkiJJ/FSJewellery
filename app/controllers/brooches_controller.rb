@@ -4,6 +4,10 @@ class BroochesController < ApplicationController
   end
 
   def show
+    @brooch = JewelleryItem.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Brooch not found"
+    redirect_to brooches_path
   end
 
   def new
