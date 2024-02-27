@@ -1,10 +1,12 @@
-<h1>Cufflinks</h1>
-
-<% @cufflinks.each do |cufflink| %>
-  <div>
-     <%= image_tag cufflink.image if cufflink.image.attached? %>
-    <h3><%= cufflink.name %></h3>
-    <p><%= cufflink.description %></p>
-    <p><%= number_to_currency(cufflink.price) %></p>
-  </div>
-<% end %>
+<h1 class="jewellery-item-heading">Cufflinks</h1>
+<div class="card-container">
+  <% @cufflinks.each do |cufflink| %>
+    <div class="jewellery-card">
+      <%= image_tag cufflink.image if cufflink.image.attached? %>
+      <div class="jewellery-card-content">
+        <h3><%= cufflink.name %></h3>
+        <p><%= number_to_currency(cufflink.price) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

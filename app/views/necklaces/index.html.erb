@@ -1,10 +1,12 @@
-<h1>Necklaces</h1>
-
-<% @necklaces.each do |necklace| %>
-  <div>
-     <%= image_tag necklace.image if necklace.image.attached? %>
-    <h3><%= necklace.name %></h3>
-    <p><%= necklace.description %></p>
-    <p><%= number_to_currency(necklace.price) %></p>
-  </div>
-<% end %>
+<h1 class="jewellery-item-heading">Necklaces</h1>
+<div class="card-container">
+  <% @necklaces.each do |necklace| %>
+    <div class="jewellery-card">
+      <%= image_tag necklace.image if necklace.image.attached? %>
+      <div class="jewellery-card-content">
+        <h3><%= necklace.name %></h3>
+        <p><%= number_to_currency(necklace.price) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
