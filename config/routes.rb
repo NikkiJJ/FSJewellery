@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   resources :cufflinks
   resources :rings
 
+  resources :users do
+    member do
+      get 'admin_dashboard', to: 'users#admin_dashboard', as: :admin_dashboard
+    end
+  end
+
 
   root to: "pages#home"
 

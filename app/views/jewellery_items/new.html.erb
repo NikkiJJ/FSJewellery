@@ -1,2 +1,30 @@
-<h1>JewelleryItems#new</h1>
-<p>Find me in app/views/jewellery_items/new.html.erb</p>
+<% if @jewellery_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @jewellery_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>Create a new jewellery item</h1>
+<%= form_with model: @jewellery_item, url: jewellery_items_path do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", name: "jewellery_item[name]" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control", name: "jewellery_item[description]" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "form-control", name: "jewellery_item[price]" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :item_type %>
+    <%= f.text_field :item_type, class: "form-control", name: "jewellery_item[item_type]" %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
