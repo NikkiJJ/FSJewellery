@@ -4,6 +4,7 @@ class EarringsController < ApplicationController
   end
 
   def show
+    @earring = JewelleryItem.find(params[:id])
   end
 
   def new

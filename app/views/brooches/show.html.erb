@@ -1,4 +1,5 @@
-<h1>Brooches#show</h1>
-<p>Find me in app/views/brooches/show.html.erb</p>
+<h1><%= @brooch.name %></h1>
+<p>Description: <%= @brooch.description %></p>
+<p>Price: <%= number_to_currency(@brooch.price) %></p>
 
-<%= @brooch.name %>
+<%= link_to "Back", brooches_path %>

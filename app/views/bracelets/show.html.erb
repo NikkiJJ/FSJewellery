@@ -1,2 +1,5 @@
-<h1>Bracelets#show</h1>
-<p>Find me in app/views/bracelets/show.html.erb</p>
+<h1><%= @bracelet.name %></h1>
+<p>Description: <%= @bracelet.description %></p>
+<p>Price: <%= number_to_currency(@bracelet.price) %></p>
+
+<%= link_to "Back", bracelets_path %>

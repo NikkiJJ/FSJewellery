@@ -4,6 +4,7 @@ class CufflinksController < ApplicationController
   end
 
   def show
+    @cufflink = JewelleryItem.find(params[:id])
   end
 
   def new

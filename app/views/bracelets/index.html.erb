@@ -4,7 +4,9 @@
     <div class="jewellery-card">
       <%= image_tag bracelet.image if bracelet.image.attached? %>
         <div class="jewellery-card-content">
-          <h3><%= bracelet.name %></h3>
+          <%= link_to bracelet_path(bracelet) do %>
+            <h3><%= bracelet.name %></h3>
+          <% end %>
           <p><%= number_to_currency(bracelet.price) %></p>
         </div>
           <% if user_signed_in? && current_user.admin? %>

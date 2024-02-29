@@ -4,6 +4,7 @@ class RingsController < ApplicationController
   end
 
   def show
+    @ring = JewelleryItem.find(params[:id])
   end
 
   def new

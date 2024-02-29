@@ -1,0 +1,5 @@
+<h1><%= @necklace.name %></h1>
+<p>Description: <%= @necklace.description %></p>
+<p>Price: <%= number_to_currency(@necklace.price) %></p>
+
+<%= link_to "Back", necklaces_path %>

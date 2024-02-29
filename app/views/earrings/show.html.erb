@@ -1,2 +1,5 @@
-<h1>Earrings#show</h1>
-<p>Find me in app/views/earrings/show.html.erb</p>
+<h1><%= @earring.name %></h1>
+<p>Description: <%= @earring.description %></p>
+<p>Price: <%= number_to_currency(@earring.price) %></p>
+
+<%= link_to "Back", earrings_path %>
