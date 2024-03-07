@@ -1,4 +1,7 @@
 class JewelleryItemsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_jewellery_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @jewellery_items = JewelleryItem.all
   end
@@ -26,8 +29,14 @@ class JewelleryItemsController < ApplicationController
   def update
   end
 
-  def destroy
-  end
+   def destroy
+     if current_user.admin? || current_user == @jewellery_item.user
+       @jewellery_item.destroy
+       redirect_to bracelets_path, notice: "Bracelet was successfully deleted."
+     else
+       redirect_to bracelets_path, alert: "You do not have permission to delete this bracelet."
+     end
+   end
 
   private
 
@@ -35,22 +44,7 @@ class JewelleryItemsController < ApplicationController
     params.require(:jewellery_item).permit(:name, :description, :price, :item_type)
   end
 
-  def show_path_for_item_type(item_type, jewellery_item)
-    case item_type
-    when "Necklace"
-      necklace_path(jewellery_item)
-    when "Earrings"
-      earrings_path(jewellery_item)
-    when "Bracelet"
-      bracelet_path(jewellery_item)
-    when "Brooch"
-      brooch_path(jewellery_item)
-    when "Cufflinks"
-      cufflinks_path(jewellery_item)
-    when "Ring"
-      ring_path(jewellery_item)
-    else
-      jewellery_item_path(jewellery_item)
-    end
+  def set_jewellery_item
+    @jewellery_item = JewelleryItem.find(params[:id])
   end
 end

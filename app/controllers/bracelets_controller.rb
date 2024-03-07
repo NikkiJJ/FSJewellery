@@ -17,5 +17,17 @@ class BraceletsController < ApplicationController
   end
 
   def destroy
+    if current_user.admin? || current_user == @bracelet.user
+      @bracelet.destroy
+      redirect_to bracelets_path, notice: "Bracelet was successfully deleted."
+    else
+      redirect_to bracelets_path, alert: "You do not have permission to delete this bracelet."
+    end
+  end
+
+  private
+
+  def set_bracelet
+    @bracelet = Bracelet.find(params[:id])
   end
 end

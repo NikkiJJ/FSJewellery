@@ -2,4 +2,6 @@
 <p>Description: <%= @bracelet.description %></p>
 <p>Price: <%= number_to_currency(@bracelet.price) %></p>
 
-<%= link_to "Back", bracelets_path %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "Delete", bracelet_path(@bracelet), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
