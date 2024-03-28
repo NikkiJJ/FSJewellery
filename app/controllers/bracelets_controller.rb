@@ -1,4 +1,6 @@
 class BraceletsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_bracelet, only: [:show, :edit, :update, :destroy]
   def index
     @bracelets = JewelleryItem.where(item_type: 'Bracelet')
   end
@@ -28,6 +30,6 @@ class BraceletsController < ApplicationController
   private
 
   def set_bracelet
-    @bracelet = Bracelet.find(params[:id])
+    @bracelet = JewelleryItem.find(params[:id])
   end
 end

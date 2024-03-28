@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :jewellery_items, only: [:create, :new, :index]
   resources :necklaces
   resources :earrings
-  # resources :bracelets
+  resources :bracelets
   resources :bracelets, only: [:show, :destroy]
   resources :brooches
   resources :cufflinks

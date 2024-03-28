@@ -29,14 +29,14 @@ class JewelleryItemsController < ApplicationController
   def update
   end
 
-   def destroy
-     if current_user.admin? || current_user == @jewellery_item.user
-       @jewellery_item.destroy
-       redirect_to bracelets_path, notice: "Bracelet was successfully deleted."
-     else
-       redirect_to bracelets_path, alert: "You do not have permission to delete this bracelet."
-     end
-   end
+  #  def destroy
+  #    if current_user.admin? || current_user == @jewellery_item.user
+  #      @jewellery_item.destroy
+  #      redirect_to bracelets_path, notice: "Bracelet was successfully deleted."
+  #    else
+  #      redirect_to bracelets_path, alert: "You do not have permission to delete this bracelet."
+  #    end
+  #  end
 
   private
 
