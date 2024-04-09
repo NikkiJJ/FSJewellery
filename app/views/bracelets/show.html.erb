@@ -1,8 +1,8 @@
 <h1><%= @bracelet.name %></h1>
 <p>Description: <%= @bracelet.description %></p>
 <p>Price: <%= number_to_currency(@bracelet.price) %></p>
-
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to "Delete", bracelet_path(@bracelet), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
- 
+<div>
+  <% if user_signed_in? && (current_user.admin? || current_user == @bracelet.user) %>
+    <%= link_to 'Delete', bracelet_path(@bracelet), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>

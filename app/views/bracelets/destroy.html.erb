@@ -1,2 +1,9 @@
 <h1>Bracelets#destroy</h1>
 <p>Find me in app/views/bracelets/destroy.html.erb</p>
+
+<div>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to "Delete", bracelet_path(@bracelet), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</div>
+
